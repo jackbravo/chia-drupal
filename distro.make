@@ -4,4 +4,4 @@ includes[] = http://drupalcode.org/project/buildkit.git/blob_plain/refs/heads/7.
 ; Add chia to the full Drupal distro build
 projects[chia][type] = profile
 projects[chia][download][type] = git
-projects[chia][download][url] = git://github.com/chia-drupal/chia.git
+projects[chia][download][url] = git://github.com/jackbravo/chia-drupal.git
