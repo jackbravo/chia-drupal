@@ -37,6 +37,7 @@ dependencies[] = email
 dependencies[] = references
 dependencies[] = user_reference
 dependencies[] = node_reference
+dependencies[] = noderefcreate
 
 ; Features
 dependencies[] = chia_projects
