@@ -15,6 +15,14 @@ function chia_projects_ctools_plugin_api() {
  */
 function chia_projects_node_info() {
   $items = array(
+    'contact' => array(
+      'name' => t('Contact'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Name'),
+      'help' => '',
+    ),
     'project' => array(
       'name' => t('Project'),
       'base' => 'node_content',
