@@ -26,4 +26,17 @@ dependencies[] = features
 dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_ui
+
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+
+dependencies[] = addressfield
+dependencies[] = email
+
+dependencies[] = references
+dependencies[] = user_reference
+dependencies[] = node_reference
+
+; Features
 dependencies[] = chia_projects
