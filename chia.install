@@ -4,6 +4,6 @@
  * Implements hook_install().
  */
 function chia_install() {
-  theme_enable(array('rubik'));
-  variable_set('theme_default', 'rubik');
+  theme_enable(array('square'));
+  variable_set('theme_default', 'square');
 }
