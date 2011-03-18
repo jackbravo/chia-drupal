@@ -3,9 +3,10 @@ includes[] = http://drupalcode.org/project/buildkit.git/blob_plain/refs/heads/7.
 
 projects[references][version] = 2.x-dev
 projects[references][subdir] = contrib
-projects[noderefcreate][version] = 1.x-dev
-projects[noderefcreate][subdir] = contrib
-projects[noderefcreate][patch][626048] = http://drupal.org/files/issues/port_to_d7-626048-5.patch
+projects[noderefcreate][type] = module
+projects[noderefcreate][download][type] = git
+projects[noderefcreate][download][url] = git://github.com/jackbravo/noderefcreate.git
+projects[noderefcreate][download][branch] = drupal-7
 projects[date][version] = 1.0-alpha2
 projects[date][subdir] = contrib
 projects[email][version] = 1.0-beta1
