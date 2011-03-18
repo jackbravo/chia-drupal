@@ -555,6 +555,77 @@ function chia_projects_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-project-field_owner'
+  $fields['node-project-field_owner'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_owner',
+      'foreign keys' => array(
+        'uid' => array(
+          'columns' => array(
+            'uid' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'uid' => array(
+          '0' => 'uid',
+        ),
+      ),
+      'module' => 'user_reference',
+      'settings' => array(
+        'referenceable_roles' => array(
+          '2' => '2',
+        ),
+        'referenceable_status' => array(
+          '0' => 0,
+          '1' => 0,
+        ),
+      ),
+      'translatable' => '1',
+      'type' => 'user_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'project',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'user_reference',
+          'settings' => array(),
+          'type' => 'user_reference_default',
+          'weight' => 8,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_owner',
+      'label' => 'Owner',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '2',
+      ),
+    ),
+  );
+
   // Exported field: 'node-project-field_proj_category'
   $fields['node-project-field_proj_category'] = array(
     'field_config' => array(
@@ -650,9 +721,9 @@ function chia_projects_field_default_fields() {
       'settings' => array(
         'referenceable_types' => array(
           'book' => 0,
+          'contact' => 'contact',
           'project' => 0,
           '0' => 0,
-          'contact' => 'contact',
         ),
       ),
       'translatable' => '1',
@@ -695,77 +766,6 @@ function chia_projects_field_default_fields() {
         ),
         'type' => 'noderefcreate_autocomplete',
         'weight' => '3',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-project-field_proj_owner'
-  $fields['node-project-field_proj_owner'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_proj_owner',
-      'foreign keys' => array(
-        'uid' => array(
-          'columns' => array(
-            'uid' => 'uid',
-          ),
-          'table' => 'users',
-        ),
-      ),
-      'indexes' => array(
-        'uid' => array(
-          '0' => 'uid',
-        ),
-      ),
-      'module' => 'user_reference',
-      'settings' => array(
-        'referenceable_roles' => array(
-          '2' => '2',
-        ),
-        'referenceable_status' => array(
-          '0' => 0,
-          '1' => '1',
-        ),
-      ),
-      'translatable' => '1',
-      'type' => 'user_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'project',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'user_reference',
-          'settings' => array(),
-          'type' => 'user_reference_default',
-          'weight' => 2,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_proj_owner',
-      'label' => 'Owner',
-      'required' => 1,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '2',
       ),
     ),
   );
@@ -1057,9 +1057,154 @@ function chia_projects_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '4',
       ),
       'widget_type' => 'text_textarea_with_summary',
+    ),
+  );
+
+  // Exported field: 'node-task-field_owner'
+  $fields['node-task-field_owner'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_owner',
+      'foreign keys' => array(
+        'uid' => array(
+          'columns' => array(
+            'uid' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'uid' => array(
+          '0' => 'uid',
+        ),
+      ),
+      'module' => 'user_reference',
+      'settings' => array(
+        'referenceable_roles' => array(
+          '2' => '2',
+        ),
+        'referenceable_status' => array(
+          '0' => 0,
+          '1' => 0,
+        ),
+      ),
+      'translatable' => '1',
+      'type' => 'user_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'task',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'user_reference',
+          'settings' => array(),
+          'type' => 'user_reference_default',
+          'weight' => 3,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_owner',
+      'label' => 'Owner',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-task-field_task_category'
+  $fields['node-task-field_task_category'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_task_category',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          '0' => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          '0' => array(
+            'parent' => '0',
+            'vocabulary' => 'task_category',
+          ),
+        ),
+      ),
+      'translatable' => '1',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'task',
+      'default_value' => array(
+        '0' => array(
+          'tid' => '19',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 2,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_task_category',
+      'label' => 'Category',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '3',
+      ),
     ),
   );
 
@@ -1198,6 +1343,31 @@ function chia_projects_field_default_fields() {
       ),
     ),
   );
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('About');
+  t('Address');
+  t('Background');
+  t('Body');
+  t('Category');
+  t('Client');
+  t('Description');
+  t('Email');
+  t('If the client doesn\'t exists, it will be created.');
+  t('If the employer doesn\'t exists it will be created.');
+  t('Owner');
+  t('Period');
+  t('Phonenumber');
+  t('Place in the sales process where this status is. 0% to 100%.
+0% projects are canceled.
+100% projects are completed.');
+  t('Price');
+  t('Status');
+  t('Title');
+  t('Type');
+  t('Value');
+  t('Works for');
 
   return $fields;
 }

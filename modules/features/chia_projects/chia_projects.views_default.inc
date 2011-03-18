@@ -155,6 +155,7 @@ function chia_projects_views_default_views() {
   $handler->display->display_options['filters']['tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
   $handler->display->display_options['filters']['tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['tid']['expose']['use_operator'] = TRUE;
   $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'tid';
   $handler->display->display_options['filters']['tid']['expose']['remember'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['reduce'] = 0;
@@ -262,9 +263,9 @@ function chia_projects_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  /* Field: Fields: field_proj_owner */
+  /* Field: Fields: field_owner */
   $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
-  $handler->display->display_options['fields']['entity_id']['table'] = 'field_data_field_proj_owner';
+  $handler->display->display_options['fields']['entity_id']['table'] = 'field_data_field_owner';
   $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['label'] = 'Owner';
   $handler->display->display_options['fields']['entity_id']['alter']['alter_text'] = 0;
@@ -364,6 +365,24 @@ function chia_projects_views_default_views() {
   $handler->display->display_options['fields']['entity_id_4']['hide_empty'] = 0;
   $handler->display->display_options['fields']['entity_id_4']['empty_zero'] = 0;
   $handler->display->display_options['fields']['entity_id_4']['click_sort_column'] = 'tid';
+  /* Field: Fields: field_proj_client */
+  $handler->display->display_options['fields']['entity_id_5']['id'] = 'entity_id_5';
+  $handler->display->display_options['fields']['entity_id_5']['table'] = 'field_data_field_proj_client';
+  $handler->display->display_options['fields']['entity_id_5']['field'] = 'entity_id';
+  $handler->display->display_options['fields']['entity_id_5']['label'] = 'Client';
+  $handler->display->display_options['fields']['entity_id_5']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['entity_id_5']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['entity_id_5']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['entity_id_5']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['entity_id_5']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['entity_id_5']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['entity_id_5']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['entity_id_5']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['entity_id_5']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['entity_id_5']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['entity_id_5']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['entity_id_5']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['entity_id_5']['click_sort_column'] = 'nid';
   /* Filter: Node: Published or admin */
   $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
@@ -375,16 +394,15 @@ function chia_projects_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'project' => 'project',
   );
-  /* Filter: Fields: field_proj_owner (field_proj_owner) - uid */
-  $handler->display->display_options['filters']['field_proj_owner_uid']['id'] = 'field_proj_owner_uid';
-  $handler->display->display_options['filters']['field_proj_owner_uid']['table'] = 'field_data_field_proj_owner';
-  $handler->display->display_options['filters']['field_proj_owner_uid']['field'] = 'field_proj_owner_uid';
-  $handler->display->display_options['filters']['field_proj_owner_uid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_proj_owner_uid']['expose']['operator'] = 'field_proj_owner_uid_op';
-  $handler->display->display_options['filters']['field_proj_owner_uid']['expose']['label'] = 'Owner';
-  $handler->display->display_options['filters']['field_proj_owner_uid']['expose']['identifier'] = 'uid';
-  $handler->display->display_options['filters']['field_proj_owner_uid']['expose']['remember'] = 1;
-  $handler->display->display_options['filters']['field_proj_owner_uid']['expose']['reduce'] = 0;
+  /* Filter: Fields: field_owner (field_owner) - uid */
+  $handler->display->display_options['filters']['field_owner_uid']['id'] = 'field_owner_uid';
+  $handler->display->display_options['filters']['field_owner_uid']['table'] = 'field_data_field_owner';
+  $handler->display->display_options['filters']['field_owner_uid']['field'] = 'field_owner_uid';
+  $handler->display->display_options['filters']['field_owner_uid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_owner_uid']['expose']['operator'] = 'field_owner_uid_op';
+  $handler->display->display_options['filters']['field_owner_uid']['expose']['label'] = 'Owner';
+  $handler->display->display_options['filters']['field_owner_uid']['expose']['identifier'] = 'uid';
+  $handler->display->display_options['filters']['field_owner_uid']['expose']['reduce'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
@@ -411,6 +429,7 @@ function chia_projects_views_default_views() {
     t('Start-End'),
     t('Category'),
     t('Status'),
+    t('Client'),
     t('Page'),
   );
 
