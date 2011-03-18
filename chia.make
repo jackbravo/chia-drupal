@@ -16,3 +16,8 @@ projects[addressfield][subdir] = contrib
 ; projects[feeds][version] = 2.0-alpha1
 ; projects[feeds][subdir] = contrib
 ; projects[job_scheduler][version] = 2.0-alpha1
+
+projects[square][type] = theme
+projects[noderefcreate][download][type] = git
+projects[noderefcreate][download][url] = git://github.com/jackbravo/square.git
+
