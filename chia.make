@@ -12,7 +12,6 @@ projects[nodereference_url][type] = module
 projects[nodereference_url][subdir] = contrib
 projects[nodereference_url][download][type] = git
 projects[nodereference_url][download][url] = git://github.com/jackbravo/nodereference_url.git
-projects[nodereference_url][download][branch] = drupal-7
 projects[date][version] = 1.0-alpha2
 projects[date][subdir] = contrib
 projects[email][version] = 1.0-beta1
