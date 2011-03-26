@@ -20,7 +20,10 @@ function chia_projects_views_default_views() {
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->display->display_options['title'] = 'Contacts';
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -155,7 +158,6 @@ function chia_projects_views_default_views() {
   $handler->display->display_options['filters']['tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
   $handler->display->display_options['filters']['tid']['expose']['label'] = 'Type';
-  $handler->display->display_options['filters']['tid']['expose']['use_operator'] = TRUE;
   $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'tid';
   $handler->display->display_options['filters']['tid']['expose']['remember'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['reduce'] = 0;
@@ -207,7 +209,10 @@ function chia_projects_views_default_views() {
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->display->display_options['title'] = 'Projects';
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -222,9 +227,11 @@ function chia_projects_views_default_views() {
     'entity_id' => 'entity_id',
     'entity_id_2' => 'entity_id_2',
     'entity_id_1' => 'entity_id_1',
-    'name' => 'name',
+    'entity_id_3' => 'entity_id_3',
+    'entity_id_4' => 'entity_id_4',
+    'entity_id_5' => 'entity_id_5',
   );
-  $handler->display->display_options['style_options']['default'] = 'title';
+  $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'title' => array(
       'sortable' => 1,
@@ -250,7 +257,19 @@ function chia_projects_views_default_views() {
       'align' => '',
       'separator' => '',
     ),
-    'name' => array(
+    'entity_id_3' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+    ),
+    'entity_id_4' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+    ),
+    'entity_id_5' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -259,6 +278,12 @@ function chia_projects_views_default_views() {
   );
   $handler->display->display_options['style_options']['override'] = 1;
   $handler->display->display_options['style_options']['sticky'] = 0;
+  /* Relationship: Fields: field_tax_proj_status (field_tax_proj_status) - tid */
+  $handler->display->display_options['relationships']['field_tax_proj_status_tid']['id'] = 'field_tax_proj_status_tid';
+  $handler->display->display_options['relationships']['field_tax_proj_status_tid']['table'] = 'field_data_field_tax_proj_status';
+  $handler->display->display_options['relationships']['field_tax_proj_status_tid']['field'] = 'field_tax_proj_status_tid';
+  $handler->display->display_options['relationships']['field_tax_proj_status_tid']['label'] = 'Status';
+  $handler->display->display_options['relationships']['field_tax_proj_status_tid']['required'] = 0;
   /* Field: Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -383,6 +408,11 @@ function chia_projects_views_default_views() {
   $handler->display->display_options['fields']['entity_id_5']['hide_empty'] = 0;
   $handler->display->display_options['fields']['entity_id_5']['empty_zero'] = 0;
   $handler->display->display_options['fields']['entity_id_5']['click_sort_column'] = 'nid';
+  /* Sort criterion: Fields: field_status_value (field_status_value) */
+  $handler->display->display_options['sorts']['field_status_value_value']['id'] = 'field_status_value_value';
+  $handler->display->display_options['sorts']['field_status_value_value']['table'] = 'field_data_field_status_value';
+  $handler->display->display_options['sorts']['field_status_value_value']['field'] = 'field_status_value_value';
+  $handler->display->display_options['sorts']['field_status_value_value']['relationship'] = 'field_tax_proj_status_tid';
   /* Filter: Node: Published or admin */
   $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
@@ -423,12 +453,12 @@ function chia_projects_views_default_views() {
     t('Items per page'),
     t('- All -'),
     t('Offset'),
+    t('Status'),
     t('Title'),
     t('Owner'),
     t('Price'),
     t('Start-End'),
     t('Category'),
-    t('Status'),
     t('Client'),
     t('Page'),
   );
