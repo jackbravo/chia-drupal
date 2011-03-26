@@ -4,6 +4,7 @@ description = Simple CRM.
 
 ; Core
 dependencies[] = book
+dependencies[] = comment
 dependencies[] = contact
 dependencies[] = dblog
 dependencies[] = field_ui
