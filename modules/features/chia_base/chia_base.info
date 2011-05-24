@@ -1,0 +1,9 @@
+name = Chia Base
+description = "Base configurations for Chia CRM"
+core = "7.x"
+package = "Features"
+dependencies[] = "strongarm"
+features[ctools][] = "strongarm:strongarm:1"
+features[variable][] = "site_403"
+project = "chia_base"
+version = "7.x-1.0"

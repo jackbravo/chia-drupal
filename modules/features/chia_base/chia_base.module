@@ -1,0 +1,44 @@
+<?php
+
+include_once('chia_base.features.inc');
+
+/**
+ * Implements of hook_menu().
+ */
+function chia_base_menu() {
+  $items = array();
+  $items['access-denied'] = array(
+    'title' => 'Access denied',
+    'page callback' => 'chia_base_403',
+    'page arguments' => array(),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  
+  return $items;
+}
+
+/**
+ * 403 page.
+ */
+function chia_base_403() {
+  // If we're in intranet mode, send anonymous users to a login screen.
+  global $user;
+  if (!$user->uid && !user_access('access content')) {
+    // drupal_access_denied() sets the $_REQUEST['destination'] which will
+    // prevent drupal_goto from behaving as expected. So we unset it.
+    unset($_GET['destination']);
+    drupal_goto('user/login', array('query' => array('destination' => $_REQUEST['q'])));
+  }
+  else {
+    // Logged in user requests path like 'user/login?destination=dashboard' which
+    // is a common case if user loses session but has 46 browser tabs open and
+    // refreshes one such tab.  This will redirect that request properly to
+    // avoid a 403.
+    if ($_REQUEST['q'] === 'user/login' && isset($_REQUEST['destination']) && $_REQUEST['destination'] !== 'user/login') {
+      drupal_goto($_REQUEST['q']);
+    }
+  }
+  return "<div class='access-denied'>". t('You are not authorized to access this page.') ."</div>";
+}
+
