@@ -1,5 +1,30 @@
-; Include Build Kit install profile makefile via URL
-includes[] = http://drupalcode.org/project/buildkit.git/blob_plain/refs/heads/7.x-2.x:/drupal-org.make
+; Previously from buildkit
+
+projects[admin_menu][subdir] = contrib
+projects[admin_menu][version] = 3.0-alpha4
+
+projects[ctools][subdir] = contrib
+projects[ctools][version] = 1.0-alpha4
+
+projects[devel][subdir] = contrib
+projects[devel][version] = 1.0
+
+projects[diff][subdir] = contrib
+projects[diff][version] = 2.0-beta2
+
+projects[features][subdir] = contrib
+projects[features][version] = 1.0-beta2
+
+projects[strongarm][subdir] = contrib
+projects[strongarm][version] = 2.0-beta2
+
+projects[views][subdir] = contrib
+projects[views][version] = 3.0-beta3
+
+projects[tao][version] = 3.0-beta3
+projects[rubik][version] = 4.0-beta5
+
+; our own
 
 projects[markdown][version] = 1.0-beta1
 projects[markdown][subdir] = contrib
