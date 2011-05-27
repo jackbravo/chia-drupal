@@ -15,9 +15,8 @@ dependencies[] = path
 dependencies[] = taxonomy
 
 ; Contrib
-dependencies[] = admin
+dependencies[] = admin_menu
 dependencies[] = openid
-dependencies[] = openidadmin
 dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = ctools
@@ -42,4 +41,5 @@ dependencies[] = node_reference
 dependencies[] = noderefcreate
 
 ; Features
+dependencies[] = chia_base
 dependencies[] = chia_projects
