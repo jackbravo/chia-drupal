@@ -1,5 +1,8 @@
 ; Previously from buildkit
 
+api = 2
+core = 7.x
+
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = 3.0-alpha4
 
