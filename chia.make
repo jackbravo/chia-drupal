@@ -4,7 +4,7 @@ api = 2
 core = 7.x
 
 projects[admin_menu][subdir] = contrib
-projects[admin_menu][version] = 3.0-alpha4
+projects[admin_menu][version] = 3.0-rc1
 
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.0-alpha4
